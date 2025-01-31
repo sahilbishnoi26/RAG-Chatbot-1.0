@@ -1,6 +1,7 @@
-# RAG-GPT: Retrieval Augmented generation (RAG) chatbot using OpenAI GPT Model, Langchain, ChromaDB, and Gradio
+# RAG-Chatbot-v1
 
-**RAG-GPT** supports both PDFs and Docs. 
+RAG-GPT: Retrieval Augmented generation (RAG) chatbot using OpenAI GPT Model, Langchain, ChromaDB, and Gradio
+
 
 **The chatbot offers versatile usage through three different methods:**
 1. **Offline Documents**: Engage with documents that you've pre-processed and vectorized. These documents can be seamlessly integrated into your chat sessions.
@@ -74,13 +75,3 @@ In Terminal 2:
 python src\raggpt_app.py
 ```
 5. Chat with your documents.
-
-**YouTube video: **[Link](https://www.youtube.com/watch?v=1FERFfut4Uw&t=3s)
-
-**Slides:** [Link](https://github.com/Farzad-R/LLM-Zero-to-Hundred/blob/master/presentation/presentation.pdf)
-
-Extra read:
-- [GPT model](https://platform.openai.com/docs/models/overview) 
-- [Gradio](https://www.gradio.app/guides/quickstart)
-- [Langchain](https://python.langchain.com/docs/get_started/quickstart)
-- [ChromaDB](https://www.trychroma.com/)
