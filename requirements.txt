@@ -1,0 +1,10 @@
+gradio
+langchain
+langchain-community
+pyprojroot
+openai
+python-dotenv
+pypdf
+chromadb
+tiktoken
+langchain-openai
