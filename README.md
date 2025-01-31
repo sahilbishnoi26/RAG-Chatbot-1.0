@@ -1,4 +1,4 @@
-# RAG-Chatbot-v1
+# RAG-Chatbot-v0.5
 
 RAG-GPT: Retrieval Augmented generation (RAG) chatbot using OpenAI GPT Model, Langchain, ChromaDB, and Gradio
 
