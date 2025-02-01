@@ -8,7 +8,7 @@ python src\terminal_q_and_a.py
 
 import openai
 import yaml
-from langchain_openai import OpenAIEmbeddings
+from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import Chroma
 from typing import List, Tuple
 from utils.load_config import LoadConfig

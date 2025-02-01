@@ -1,5 +1,5 @@
 
-from langchain_community.document_loaders import PyPDFLoader
+from langchain.document_loaders import PyPDFLoader
 from utils.utilities import count_num_tokens
 import openai
 
@@ -71,8 +71,6 @@ class Summarizer:
                         docs[i].page_content
                 summarizer_llm_system_role = summarizer_llm_system_role.format(
                     max_summarizer_output_token)
-                print(f"Prompt being sent to OpenAI: {prompt}")
-
                 full_summary += Summarizer.get_llm_response(
                     gpt_model,
                     temperature,
@@ -109,12 +107,8 @@ class Summarizer:
         Returns:
             str: The response content from the ChatGPT engine.
         """
-        client = openai.OpenAI()
-        if not prompt or not isinstance(prompt, str) or len(prompt.strip()) == 0:
-            return "Error: No valid input provided to the model."
-
-        response = client.chat.completions.create(
-            model=gpt_model,
+        response = openai.ChatCompletion.create(
+            engine=gpt_model,
             messages=[
                 {"role": "system", "content": llm_system_role},
                 {"role": "user", "content": prompt}
