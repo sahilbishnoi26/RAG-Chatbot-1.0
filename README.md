@@ -23,7 +23,7 @@ To use any of these methods, select the appropriate option from the **"RAG with"
 
 ## RAG-GPT User Interface
 <div align="center">
-  <img src="images/RAGGPT UI.png" alt="RAG-GPT UI">
+  <img src="images/web_ui.png" alt="RAG-GPT UI">
 </div>
 
 ## Project Schema
