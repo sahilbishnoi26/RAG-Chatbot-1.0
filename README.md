@@ -1,19 +1,25 @@
 # RAG-Chatbot-v0.5
 
-RAG-GPT: Retrieval Augmented generation (RAG) chatbot using OpenAI GPT Model, Langchain, ChromaDB, and Gradio
+**RAG-GPT: Retrieval-Augmented Generation (RAG) chatbot using OpenAI GPT Model, LangChain, ChromaDB, and Gradio**
 
+## Features
 
-**The chatbot offers versatile usage through three different methods:**
-1. **Offline Documents**: Engage with documents that you've pre-processed and vectorized. These documents can be seamlessly integrated into your chat sessions.
-2. **Real-time Uploads:** Easily upload documents during your chat sessions, allowing the chatbot to process and respond to the content on-the-fly.
-3. **Summarization Requests:** Request the chatbot to provide a comprehensive summary of an entire PDF or document in a single interaction, streamlining information retrieval.
+### **1. Offline Documents**
+Interact with pre-processed and vectorized documents, seamlessly integrating them into chat sessions.
 
-To employ any of these methods, simply configure the appropriate settings in the "RAG with" dropdown menu within the chatbot interface. Tailor your interactions with documents to suit your preferences and needs efficiently.
+### **2. Real-time Uploads**
+Upload documents during chat sessions, allowing the chatbot to process and respond to content on-the-fly.
 
-* The project provides guidance on configuring various settings, such as adjusting the GPT model's temperature for optimal performance.
-* The user interface is crafted with gradio, ensuring an intuitive and user-friendly experience.
-* The model incorporates memory, retaining user Q&As for an enhanced and personalized user experience.
-* For each response, you can access the retrieved content along with the option to view the corresponding PDF. 
+### **3. Summarization Requests**
+Request a comprehensive summary of an entire PDF or document in a single interaction, streamlining information retrieval.
+
+To use any of these methods, select the appropriate option from the **"RAG with" dropdown menu** within the chatbot interface.
+
+### **Additional Capabilities**
+- Customizable settings, such as adjusting the GPT model's **temperature** for optimal performance.
+- Built-in **memory retention**, enabling the chatbot to recall previous Q&As for a more personalized experience.
+- Displays retrieved content along with the corresponding PDF for reference.
+- User-friendly interface built with **Gradio**.
 
 ## RAG-GPT User Interface
 <div align="center">
@@ -25,53 +31,37 @@ To employ any of these methods, simply configure the appropriate settings in the
   <img src="images/RAGGPT_schema.png" alt="Schema">
 </div>
 
-* NOTE: This project is currently set up as a **demo**. As such, the document management is simplified and not suitable for production environments.
+### **Note:** This project is currently a **demo**, and document management is simplified. It is not intended for production environments.
 
 ## Document Storage
-Documents are stored in two separate folders within the `data` directory:
-- `data/docs_2`: For files that you want to **upload**.
-- `data/docs`: For files that should be **processed in advance**.
+
+Documents are stored in two dedicated folders within the `data` directory:
+- **`data/docs_2`** – For files uploaded in real-time.
+- **`data/docs`** – For documents that are pre-processed.
 
 ## Server Setup
-The `serve.py` module leverages these folders to create an **HTTPS server** that hosts the PDF files, making them accessible for user viewing.
+
+The **`serve.py`** module establishes an **HTTPS server** to host PDF files, making them accessible for viewing.
 
 ## Database Creation
-Vector databases (vectorDBs) are generated within the `data` folder, facilitating the project's functionality.
+
+Vector databases (**vectorDBs**) are automatically created in the `data` folder, enabling efficient retrieval and response generation.
 
 ## Important Considerations
-- The current file management system is intended for **demonstration purposes only**.
-- It is **strongly recommended** to design a more robust and secure document handling process for any production deployment.
-- Ensure that you place your files in the correct directories (`data/docs_2` and `data/docs`) for the project to function as intended.
+
+- This implementation is intended for **demonstration purposes only**.
+- **A more secure document handling system is strongly recommended** for production use.
+- Files must be placed in the appropriate directories (`data/docs_2` and `data/docs`) for proper functionality.
 
 ## Running the Project
 
-To get the project up and running, you'll need to set up your environment and install the necessary dependencies. You can do this in two ways:
+The project requires setting up the environment and installing dependencies. There are two setup options:
 
-### Option 1: Using the Parent Directory Instructions
+### **Option 1: Using the Parent Directory Instructions**
+Follow the instructions in the [parent directory](https://github.com/Farzad-R/LLM-playground/tree/master) to create an environment and install the required libraries.
 
-Follow the instruction on the [parent directory](https://github.com/Farzad-R/LLM-playground/tree/master) to create an environment and install required libraries. 
-
-### Option 2: Installing Dependencies Individually
-If you prefer to install the dependencies individually, run the following command:
+### **Option 2: Installing Dependencies Individually**
+To install dependencies manually, run:
 
 ```
-pip install gradio==4.13.0 langchain==0.0.354 openai==0.28.0 chromadb==0.4.22 pypdf==3.17.4 pandas==2.1.4
-```
-
-1. **Configuration and Execution**
-* Open cfg.py and fill in your GPT API credentials.
-
-2. **Activate Your Environment.**
-3. **Ensure you are in the RAG-GPT directory**
-4. **Run the Application:**
-
-In Terminal 1:
-```
-python src\serve.py
-```
-
-In Terminal 2:
-```
-python src\raggpt_app.py
-```
-5. Chat with your documents.
+pip install gradio==4.13.0 langchain==0.0.354 openai==0.28.0
